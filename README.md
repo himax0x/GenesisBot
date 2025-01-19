@@ -1,7 +1,7 @@
 <html lang="en"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@esei</title>
+    <title>@hima</title>
     
     <!-- Favicon link (add your logo file path) -->
     <link rel="icon" href="assets/logo.ico" type="image/x-icon"> <!-- Replace 'assets/logo.ico' with your actual logo file path -->
@@ -162,12 +162,12 @@
 <!-- Profile Container -->
 <div class="profile-container">
     <div class="profile-pic"></div>
-    <div class="username" id="username">eseire</div>
+    <div class="username" id="username">hima</div>
     <div class="icon-container">
         <a href="https://discord.com/users/640547461751898122" target="_blank">
             <img src="assets/discord_logo.svg" class="icon" alt="Discord">
         </a>
-        <a href="https://tiktok.com/@eseire" target="_blank">
+        <a href="https://tiktok.com/@hima" target="_blank">
             <img src="assets/tiktok_logo.svg" class="icon" alt="TikTok">
         </a>
         <a href="https://instagram.com/anklechopper" target="_blank">
