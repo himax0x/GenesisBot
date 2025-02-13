@@ -1,0 +1,313 @@
+<html lang="fr">
+<base href="https://aalltra.github.io/sponsor1/">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Bot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0a1929;
+            --secondary-color: #b71ee5;
+            --accent-color: #8400ff;
+            --background-color: #0d1117;
+            --text-color: #e0e0e0;
+            --card-bg: rgba(30, 41, 59, 0.85);
+            --button-gradient: linear-gradient(135deg, #b71ee5, #4400ff);
+            --button-gradient-hover: linear-gradient(135deg, #4c00ff, #851ee5);
+            --transition-speed: 0.3s;
+            --font-family-primary: 'Orbitron', sans-serif;
+            --font-family-secondary: 'Roboto', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            transition: background-color var(--transition-speed), color var(--transition-speed);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color var(--transition-speed), transform var(--transition-speed);
+            position: relative;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            left: 50%;
+            bottom: -3px;
+            transition: width var(--transition-speed), left var(--transition-speed);
+        }
+
+        a:hover::after,
+        a.active::after {
+            width: 100%;
+            left: 0;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+            transform: scale(1.05);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: var(--primary-color);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header h1 {
+            font-family: var(--font-family-secondary);
+            font-size: 3rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            animation: pulseGlow 2s infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% {
+                text-shadow: 0 0 5px var(--accent-color);
+            }
+            50% {
+                text-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                text-shadow: 0 0 5px var(--accent-color);
+            }
+        }
+
+        main {
+            padding: 4rem 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .project-title {
+            font-family: var(--font-family-primary);
+            font-size: 2.5rem;
+            text-align: center;
+            color: var(--accent-color);
+            animation: slideIn 1s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .features, .how-to-use, .next-version {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 1rem;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform var(--transition-speed);
+        }
+
+        .features h2, .how-to-use h2, .next-version h2 {
+            font-family: var(--font-family-secondary);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--secondary-color);
+            text-align: center;
+        }
+
+        .features ul, .how-to-use ul, .next-version ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 1rem;
+        }
+
+        .features li, .how-to-use li, .next-version li {
+            background: rgba(255, 255, 255, 0.1);
+            margin-bottom: 0.5rem;
+            padding: 0.75rem 1rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            transition: background var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .features li:hover, .how-to-use li:hover, .next-version li:hover {
+            background: var(--accent-color);
+            transform: translateX(10px);
+        }
+
+        .features li i, .how-to-use li i, .next-version li i {
+            margin-right: 0.5rem;
+            color: var(--secondary-color);
+            transition: color var(--transition-speed), transform var(--transition-speed);
+        }
+
+        .features li:hover i, .how-to-use li:hover i, .next-version li:hover i {
+            color: white;
+            transform: rotate(10deg);
+        }
+
+        .download-button {
+            background: var(--button-gradient);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background var(--transition-speed), transform var(--transition-speed);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            text-decoration: none;
+            animation: glow 1.5s infinite;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px var(--accent-color);
+            }
+            50% {
+                box-shadow: 0 0 20px var(--accent-color);
+            }
+            100% {
+                box-shadow: 0 0 5px var(--accent-color);
+            }
+        }
+
+        .download-button:hover {
+            background: var(--button-gradient-hover);
+            transform: scale(1.05);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .features, .how-to-use, .next-version {
+                padding: 1.5rem;
+            }
+
+            .download-button {
+                font-size: 1rem;
+                padding: 0.75rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+
+    <main>
+        <div class="project-title">GENESIS BOT </div>
+        <i></i>
+
+        
+        <a href="https://discord.gg/rlbot" class="download-button"><i class="fas fa-download"></i> Support/Discord</a>
+        
+        <div class="features">
+            <h2>Features</h2>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Nexto (GC)</li>
+                <li><i class="fas fa-check-circle"></i> NextMortal (GC)</li>
+                <li><i class="fas fa-check-circle"></i> Necto (Champ)</li>
+                <li><i class="fas fa-check-circle"></i> Element (Diamond)</li>
+                <li><i class="fas fa-check-circle"></i> Seer (Gold)</li>
+                <li><i class="fas fa-check-circle"></i> Karma (Gold)</li>
+                <li><i class="fas fa-check-circle"></i> Bumblebee (Platinum)</li>
+                <li><i class="fas fa-check-circle"></i> Force Jump (Simple or Double)</li>
+                <li><i class="fas fa-check-circle"></i> Goal Celebration edited</li>
+                <li><i class="fas fa-check-circle"></i> Auto BallCam</li>
+                <li><i class="fas fa-check-circle"></i> Dodge Demo</li>
+                <li><i class="fas fa-check-circle"></i> And a lot more!</li>
+            </ul>
+        </div>
+
+        <div class="how-to-use">
+            <h2>How to Use</h2>
+            <ul>
+                <li><i class="fas fa-keyboard"></i> BallCam is set to "space" key. To delete BallCam, open rlmarlbot/main.py and delete pid=self.pid on line 855.</li>
+                <li><i class="fas fa-keyboard"></i> Jump Force Simple is set to "u". To change, go to marlbot/nexto/bot.py, find "u" and replace it with another key.</li>
+                <li><i class="fas fa-keyboard"></i> Jump Force Double is set to "i". To change, go to marlbot/nexto/bot.py, find "i" and replace it with another key.</li>
+            </ul>
+        </div>
+
+        <div class="next-version">
+            <h2>What's Next in 1.5.0?</h2>
+            <ul>
+                <li><i class="fas fa-arrow-right"></i> Auto Chat</li>
+                <li><i class="fas fa-arrow-right"></i> New Kickoff (15 kickoffs for more human-like gameplay)</li>
+                <li><i class="fas fa-arrow-right"></i> Some other features</li>
+            </ul>
+        </div>
+
+        <div class="next-version">
+            <h2>Most recent version</h2>
+            <ul>
+                <li><i class="fas fa-arrow-right"></i> Improved bot</li>
+                <li><i class="fas fa-arrow-right"></i> Bugs fixed </li>
+                <li><i class="fas fa-arrow-right"></i> Some other features</li>
+            </ul>
+        </div>
+        
+        <div class="next-version">
+            <h2>All released versions</h2>
+        <a href="hhttps://mega.nz/file/mj4HBJqT#8CY5oDKLWfvSkwSN_g7a2fZ3Gnnk-TIYUjMJPKX5J6U" class="download-button"><i class="fas fa-download"></i> v 1.0.0</a>
+        <a href="https://mega.nz/file/uro2xSRR#GVC_jHwrt3emva-LYCryFKqmfGvhtHmG05noG84tuFc" class="download-button"><i class="fas fa-download"></i> v 1.1.0</a>
+        <a href="https://mega.nz/file/b3giHY4D#945yYTXiygyuHXta0JJuadX_b18yn7ipwnKS9-XliT0" class="download-button"><i class="fas fa-download"></i> v 1.2.0</a>
+        <a href="https://mega.nz/file/SnxDTC4a#cc-PjJIX36ptzc5HE5VgW58WIITrB-YhHnfsXmmAdqs" class="download-button"><i class="fas fa-download"></i> v 1.3.0</a>
+        <a href="https://mega.nz/file/7rxTiK6Q#LG33KgmbDgwagQFVAKMf4IsskjrD1paaTMcjCL9wfEA" class="download-button"><i class="fas fa-download"></i> v 1.4.0</a>
+        <a href="https://mega.nz/file/nqxiBabb#JcAvALB55hHaydBiwtzJQkAhhTVpFyHmT5VVXCjPGq8" class="download-button"><i class="fas fa-download"></i> v 1.5.1</a>
+        <a href="https://mega.nz/file/rVA3WB5I#N_N-4xpVtKxQjGOhZ_f4jkLO97ImLIWbRxrqDm4CZfE" class="download-button"><i class="fas fa-download"></i> v 1.5.2</a>
+    </main>
+</body>
+</html>
